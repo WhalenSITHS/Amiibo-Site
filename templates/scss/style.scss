@@ -1,3 +1,52 @@
+html {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   background-color: #fff;
+}
+header {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+  list-style: none;
+  text-decoration: none;
+}
+.header-nav {
+  .header-nav-link,
+  :visited,
+  :link {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  .display-amiibo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    width: 7vw;
+    list-style: none;
+  }
+  .display-image {
+    height: 15vh;
+  }
 }

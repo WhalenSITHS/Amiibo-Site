@@ -7,5 +7,9 @@ module.exports = {
   },
   devServer: {
     contentBase: "./dist"
-  }
+  },
+  watchOptions: {
+    ignored: ["node_modules"]
+  },
+  watch: true
 };
