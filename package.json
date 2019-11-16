@@ -1,0 +1,31 @@
+{
+  "name": "amiibo-site",
+  "version": "1.0.0",
+  "description": "amiibo site for demoing express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js -e js,hbs",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhalenSITHS/Amiibo-Site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhalenSITHS/Amiibo-Site/issues"
+  },
+  "homepage": "https://github.com/WhalenSITHS/Amiibo-Site#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.0.6",
+    "request": "^2.88.0"
+  }
+}
