@@ -29,6 +29,16 @@ app.get("", async (req, res) => {
   }
 });
 
+app.get("/pokemon", async (req, res) => {
+  try {
+    res.render("pokemon", {
+      title: "Pokemon Amiibo!"
+    });
+  } catch (error) {
+    res.status(500).send();
+  }
+});
+
 app.listen(port, () => {
   console.log(`Listening on ${port}`);
 });

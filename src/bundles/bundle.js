@@ -1,5 +1,4 @@
 import { elements } from "./elements";
-import { create } from "domain";
 
 elements.amiiboForm.addEventListener("keypress", function(event) {
   if (event.keyCode === 13) {

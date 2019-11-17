@@ -7,7 +7,10 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#a1c4fd), to(#c2e9fb));
+  background-image: linear-gradient(to right bottom, #a1c4fd, #c2e9fb);
+  background-size: cover;
+  min-height: 100vh;
 }
 
 header {
