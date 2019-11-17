@@ -31,21 +31,37 @@ header {
   font-size: 1.5rem;
   justify-content: center;
   align-items: center;
+  .amiibo-form {
+    text-align: center;
+  }
+  #amiibo-name {
+    text-align: center;
+  }
 }
 .display {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.7rem;
+  width: 70vw;
+  flex-wrap: wrap;
+  margin: 0 auto;
   .display-amiibo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
+    padding: 2rem;
     width: 7vw;
     list-style: none;
+    text-align: center;
   }
+  .display-name,
+  .display-series,
+  .display-image {
+    padding: 1rem;
+  }
+
   .display-image {
     height: 15vh;
   }

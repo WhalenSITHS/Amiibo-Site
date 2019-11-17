@@ -15,21 +15,20 @@ function search() {
     try {
       const result = await fetch(amiiboUrl);
       const data = await result.json();
-      renderAmiibo(data);
+      data.amiibo.forEach(element => {
+        elements.displayArea.insertAdjacentHTML(
+          "beforeend",
+          `<ul class="display-amiibo">
+          <li class="display-name">Name:${element.character}</li>
+          <li class="display-series">Series:${element.amiiboSeries}</li>
+          <img class="display-image" src="${element.image}" alt="">
+        </ul>`
+        );
+      });
+      console.log(data.amiibo[0]);
     } catch (error) {
       console.log(error);
     }
   });
 }
 search();
-
-const renderAmiibo = amiibo => {
-  const markup = `<ul class="display-amiibo">
-  <li class="display-name">Name: ${amiibo.character}</li>
-  <li class="display-series">Series: %series%</li>
-  <img class="display-image" src="%source%" alt="">
-</ul>`;
-  data.amiibo.forEach(el => {
-    elements.displayArea.insertAdjacentHTML("beforeend", markup);
-  });
-};
