@@ -1,8 +1,11 @@
 const path = require("path");
 module.exports = {
-  entry: "./src/bundles/bundle.js",
+  entry: {
+    app: "./src/bundles/bundle.js",
+    display: "./src/bundles/amiibo-display.js"
+  },
   output: {
-    filename: "app.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "public/js")
   },
   devServer: {

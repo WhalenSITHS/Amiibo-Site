@@ -1,8 +1,4 @@
-const elements = {
-  amiiboForm: document.getElementById("amiibo-form"),
-  amiiboName: document.getElementById("amiibo-name"),
-  displayArea: document.getElementById("test")
-};
+import { elements } from "./elements";
 
 async function displayAmiibo() {
   const amiiboUrl = "https://www.amiiboapi.com/api/amiibo/?gameseries=pokemon";
