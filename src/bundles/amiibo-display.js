@@ -1,9 +1,9 @@
 import { elements } from "./elements";
+/* const amiiboTitle = document.getElementsByClassName("header-title").value;
+console.log(amiiboTitle); */
 
 async function displayAmiibo() {
-  const amiiboTitle = document.getElementsByClassName("header-title").value;
-  console.log(amiiboTitle);
-  const amiiboUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=${amiiboTitle}`;
+  const amiiboUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=pokemon`;
 
   try {
     const result = await fetch(amiiboUrl);
@@ -22,8 +22,4 @@ async function displayAmiibo() {
     console.log(error);
   }
 }
-
-window.addEventListener("load", event => {
-  displayAmiibo();
-  console.log("page is fully loaded");
-});
+displayAmiibo();
