@@ -3,10 +3,14 @@ import { elements } from "./elements";
 console.log(amiiboTitle); */
 
 async function displayAmiibo() {
-  const amiiboUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=pokemon`;
+  //const amiiboUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=pokemon`;
 
   try {
-    const result = await fetch(amiiboUrl);
+    const result = await fetch("/showcase/pokemon", {
+      method: "POST",
+      body: window.location.href,
+      headers: { "Content-Type": "application/text" }
+    });
     const data = await result.json();
     data.amiibo.forEach(element => {
       elements.displayArea.insertAdjacentHTML(
@@ -23,3 +27,4 @@ async function displayAmiibo() {
   }
 }
 displayAmiibo();
+console.log(window.location.href);

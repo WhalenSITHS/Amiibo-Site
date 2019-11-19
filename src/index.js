@@ -41,22 +41,23 @@ app.get("/pokemon", async (req, res) => {
     res.status(500).send();
   }
 });
-app.post("/showcase/:id", async (req, res) => {
-  const amiiboId = req.params.id;
+app.post("/showcase/", async (req, res) => {
+  //const amiiboId = req.params.id;
+  const amiiboId = req.body;
   let result = await request.get(
     `https://www.amiiboapi.com/api/amiibo/?gameseries=${amiiboId}`
   );
+  res.send(result);
 });
 app.get("/showcase/:id", async (req, res) => {
   const amiibo = req.params.id;
-  if (amiibo == 0) {
-    try {
-      res.render("showcase", {
-        title: `Zelda`
-      });
-    } catch (error) {
-      res.status(500).send();
-    }
+
+  try {
+    res.render("showcase", {
+      title: `Zelda`
+    });
+  } catch (error) {
+    res.status(500).send();
   }
 });
 
