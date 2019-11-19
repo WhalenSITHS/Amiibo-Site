@@ -1,9 +1,9 @@
 import { elements } from "./elements";
-/* const amiiboTitle = document.getElementsByClassName("header-title").value;
-console.log(amiiboTitle); */
+const amiiboTitle = document.getElementsByClassName("header-title").value;
+console.log(amiiboTitle);
 
 async function displayAmiibo() {
-  const amiiboUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=pokemon`;
+  const amiiboUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=${amiiboTitle}`;
 
   try {
     const result = await fetch(amiiboUrl);
