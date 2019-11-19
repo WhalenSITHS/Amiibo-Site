@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 const publicDirectoryPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
+const exp = require("./data/exp");
 
 //setup handlebars engine and views location
 
@@ -41,11 +42,9 @@ app.get("/pokemon", async (req, res) => {
 
 app.get("/showcase/:id", async (req, res) => {
   const amiibo = req.params.id;
-  if (amiibo == 0) {
+  {
     try {
-      res.render("showcase", {
-        title: `Zelda`
-      });
+      res.send();
     } catch (error) {
       res.status(500).send();
     }
