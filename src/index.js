@@ -1,8 +1,10 @@
 const path = require("path");
 const hbs = require("hbs");
 const express = require("express");
-
+const parser = require("body-parser");
 const app = express();
+
+const request = require("request-promise");
 const port = process.env.PORT || 3000;
 
 //define paths for express configs
@@ -18,7 +20,8 @@ hbs.registerPartials(partialsPath);
 
 //Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
-
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: false }));
 app.get("", async (req, res) => {
   try {
     res.render("index", {
@@ -38,7 +41,12 @@ app.get("/pokemon", async (req, res) => {
     res.status(500).send();
   }
 });
-
+app.post("/showcase/:id", async (req, res) => {
+  const amiiboId = req.params.id;
+  let result = await request.get(
+    `https://www.amiiboapi.com/api/amiibo/?gameseries=${amiiboId}`
+  );
+});
 app.get("/showcase/:id", async (req, res) => {
   const amiibo = req.params.id;
   if (amiibo == 0) {
