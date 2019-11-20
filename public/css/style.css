@@ -14,17 +14,47 @@ body {
 }
 
 header {
-  margin: 0 auto;
+  margin: 5rem auto;
   text-align: center;
   font-size: 2rem;
   list-style: none;
   text-decoration: none;
+  border-bottom: 2px solid black;
+}
+
+.home-link,
+:visited,
+:link {
+  margin: 1 rem auto;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+
+.header-title {
+  font-size: 8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80vw;
+  margin: 1rem auto;
 }
 
 .header-nav .header-nav-link,
 .header-nav :visited,
 .header-nav :link {
   text-decoration: none;
+  text-transform: uppercase;
   color: black;
 }
 
@@ -45,6 +75,11 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
+}
+
+.search .search-title {
+  font-size: 4rem;
 }
 
 .search .amiibo-form {
@@ -53,6 +88,8 @@ header {
 
 .search #amiibo-name {
   text-align: center;
+  height: 6rem;
+  width: 30rem;
 }
 
 .display {
@@ -65,7 +102,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   width: 70vw;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -73,6 +110,7 @@ header {
 }
 
 .display .display-amiibo {
+  text-transform: uppercase;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,7 +125,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem;
-  width: 7vw;
+  width: 10vw;
   list-style: none;
   text-align: center;
 }

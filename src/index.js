@@ -31,24 +31,26 @@ app.get("", async (req, res) => {
 
 app.get("/pokemon", async (req, res) => {
   try {
-    res.render("pokemon", {
-      title: "Pokemon Amiibo!"
-    });
+    res.render("pokemon");
   } catch (error) {
     res.status(500).send();
   }
 });
-
+app.get("/zelda", async (req, res) => {
+  try {
+    res.render("zelda");
+  } catch (error) {
+    res.status(500).send();
+  }
+});
 app.get("/showcase/:id", async (req, res) => {
-  const amiibo = req.params.id;
-  if (amiibo == 0) {
-    try {
-      res.render("showcase", {
-        title: `Zelda`
-      });
-    } catch (error) {
-      res.status(500).send();
-    }
+  const title = req.params.id;
+  try {
+    res.render("showcase", {
+      title: `${title}`
+    });
+  } catch (error) {
+    res.status(500).send();
   }
 });
 

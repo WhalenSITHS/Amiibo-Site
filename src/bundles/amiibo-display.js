@@ -1,9 +1,9 @@
 import { elements } from "./elements";
-const amiiboTitle = document.getElementsByClassName("header-title").value;
-console.log(amiiboTitle);
+const title = document.getElementById("title").textContent;
+console.log(title);
 
 async function displayAmiibo() {
-  const amiiboUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=${amiiboTitle}`;
+  const amiiboUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=${title}`;
 
   try {
     const result = await fetch(amiiboUrl);
@@ -12,8 +12,8 @@ async function displayAmiibo() {
       elements.displayArea.insertAdjacentHTML(
         "beforeend",
         `<ul class="display-amiibo">
-          <li class="display-name">Name:${element.character}</li>
-          <li class="display-series">Series:${element.amiiboSeries}</li>
+          <li class="display-name">${element.character}</li>
+          <li class="display-series">${element.amiiboSeries}</li>
           <img class="display-image" src="${element.image}" alt="">
         </ul>`
       );
@@ -22,4 +22,7 @@ async function displayAmiibo() {
     console.log(error);
   }
 }
+
 displayAmiibo();
+
+//displayAmiibo();

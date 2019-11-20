@@ -18,8 +18,8 @@ function search() {
         elements.displayArea.insertAdjacentHTML(
           "beforeend",
           `<ul class="display-amiibo">
-          <li class="display-name">Name:${element.character}</li>
-          <li class="display-series">Series:${element.amiiboSeries}</li>
+          <li class="display-name">${element.character}</li>
+          <li class="display-series">${element.amiiboSeries}</li>
           <img class="display-image" src="${element.image}" alt="">
         </ul>`
         );

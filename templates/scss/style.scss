@@ -14,17 +14,37 @@ body {
   min-height: 100vh;
 }
 header {
-  margin: 0 auto;
+  margin: 5rem auto;
   text-align: center;
   font-size: 2rem;
   list-style: none;
   text-decoration: none;
+  border-bottom: 2px solid black;
+}
+.home-link,
+:visited,
+:link {
+  margin: 1 rem auto;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+.header-title {
+  font-size: 8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
 }
 .header-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  margin: 1rem auto;
   .header-nav-link,
   :visited,
   :link {
     text-decoration: none;
+    text-transform: uppercase;
     color: black;
   }
 }
@@ -37,28 +57,35 @@ header {
   font-size: 1.5rem;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  .search-title {
+    font-size: 4rem;
+  }
   .amiibo-form {
     text-align: center;
   }
   #amiibo-name {
     text-align: center;
+    height: 6rem;
+    width: 30rem;
   }
 }
 .display {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   width: 70vw;
   flex-wrap: wrap;
   margin: 0 auto;
   .display-amiibo {
+    text-transform: uppercase;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    width: 7vw;
+    width: 10vw;
     list-style: none;
     text-align: center;
   }
