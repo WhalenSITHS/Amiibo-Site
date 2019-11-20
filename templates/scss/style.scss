@@ -4,14 +4,66 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+$colors: (
+  primary-color-dark: #d32f2f,
+  primary-color: #222629,
+  primary-color-light: #ffcdd2,
+  primary-color-text: #ffffff,
+  accent-color: #9e9e9e,
+  primary-text-color: #212121,
+  secondary-text-color: #757575,
+  divider-color: #bdbdbd,
+  test: #e60012
+);
+@font-face {
+  font-family: "mario-font";
+  src: url("fonts/super_mario_bros-webfont.woff");
+  src: url("fonts/super_mario_bros-webfont.woff2");
+}
+@font-face {
+  font-family: "zelda-font";
+  src: url("fonts/zelda.woff");
+  src: url("fonts/zelda.woff2");
+}
+@font-face {
+  font-family: "pokemon-font";
+  src: url("fonts/pkmn.woff");
+  src: url("fonts/pkmn.woff2");
+}
+@font-face {
+  font-family: "fire-emblem-font";
+  src: url("fonts/fire.woff");
+}
+.fire {
+  font-family: "fire-emblem-font";
+  font-size: 3rem;
+}
+.pokemon {
+  font-family: "pokemon-font";
+  letter-spacing: 0.6rem;
+  color: #faed26;
+  .pkmn-color {
+    color: #faed26;
+  }
+}
+.mario {
+  font-family: "mario-font";
+  letter-spacing: 0.6rem;
+}
+.zelda {
+  font-family: "zelda-font";
+  letter-spacing: 0.5rem;
+}
+$padding: 15px;
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
 body {
-  background-image: linear-gradient(
-    to right bottom,
-    rgba(#a1c4fd, 1),
-    rgba(#c2e9fb, 1)
-  );
-  background-size: cover;
+  background-color: color(primary-color);
   min-height: 100vh;
+  color: color(primary-color-text);
 }
 header {
   margin: 5rem auto;
@@ -20,14 +72,15 @@ header {
   list-style: none;
   text-decoration: none;
   border-bottom: 2px solid black;
+  text-transform: uppercase;
 }
 .home-link,
 :visited,
 :link {
-  margin: 1 rem auto;
+  margin: 1rem auto;
   text-transform: uppercase;
   text-decoration: none;
-  color: #000;
+  color: color(primary-color-text);
 }
 .header-title {
   font-size: 8rem;
@@ -45,7 +98,12 @@ header {
   :link {
     text-decoration: none;
     text-transform: uppercase;
-    color: black;
+    color: color(primary-color-text);
+    transition: 0.3s;
+  }
+  .header-nav-link:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
   }
 }
 
@@ -88,6 +146,11 @@ header {
     width: 10vw;
     list-style: none;
     text-align: center;
+    transition: 0.3s;
+  }
+  .display-amiibo:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
   }
   .display-name,
   .display-series,
@@ -98,4 +161,69 @@ header {
   .display-image {
     height: 15vh;
   }
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  margin: 1rem;
+  font-size: 2rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn-white {
+  background-color: #fff;
+  color: color(test);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.btn-white:after {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
+}
+.btn-white:hover {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-red {
+  background-color: color(test);
+}
+.btn-red:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
+}
+.btn-red:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
 }

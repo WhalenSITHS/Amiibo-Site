@@ -6,11 +6,58 @@ html {
           box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "mario-font";
+  src: url("fonts/super_mario_bros-webfont.woff");
+  src: url("fonts/super_mario_bros-webfont.woff2");
+}
+
+@font-face {
+  font-family: "zelda-font";
+  src: url("fonts/zelda.woff");
+  src: url("fonts/zelda.woff2");
+}
+
+@font-face {
+  font-family: "pokemon-font";
+  src: url("fonts/pkmn.woff");
+  src: url("fonts/pkmn.woff2");
+}
+
+@font-face {
+  font-family: "fire-emblem-font";
+  src: url("fonts/fire.woff");
+}
+
+.fire {
+  font-family: "fire-emblem-font";
+  font-size: 3rem;
+}
+
+.pokemon {
+  font-family: "pokemon-font";
+  letter-spacing: 0.6rem;
+  color: #faed26;
+}
+
+.pokemon .pkmn-color {
+  color: #faed26;
+}
+
+.mario {
+  font-family: "mario-font";
+  letter-spacing: 0.6rem;
+}
+
+.zelda {
+  font-family: "zelda-font";
+  letter-spacing: 0.5rem;
+}
+
 body {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#a1c4fd), to(#c2e9fb));
-  background-image: linear-gradient(to right bottom, #a1c4fd, #c2e9fb);
-  background-size: cover;
+  background-color: #222629;
   min-height: 100vh;
+  color: #ffffff;
 }
 
 header {
@@ -20,15 +67,16 @@ header {
   list-style: none;
   text-decoration: none;
   border-bottom: 2px solid black;
+  text-transform: uppercase;
 }
 
 .home-link,
 :visited,
 :link {
-  margin: 1 rem auto;
+  margin: 1rem auto;
   text-transform: uppercase;
   text-decoration: none;
-  color: #000;
+  color: #ffffff;
 }
 
 .header-title {
@@ -55,7 +103,16 @@ header {
 .header-nav :link {
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
+  color: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header-nav .header-nav-link:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
+          box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
 }
 
 .search {
@@ -128,6 +185,15 @@ header {
   width: 10vw;
   list-style: none;
   text-align: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.display .display-amiibo:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
+          box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
 }
 
 .display .display-name,
@@ -138,5 +204,93 @@ header {
 
 .display .display-image {
   height: 15vh;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  margin: 1rem;
+  font-size: 2rem;
+  border-radius: 10rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+  -webkit-animation: moveInBottom 0.5s ease-out 0.75s;
+          animation: moveInBottom 0.5s ease-out 0.75s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #e60012;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-white:after {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
+          box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
+}
+
+.btn-white:hover {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
+          box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
+}
+
+.btn:hover::after {
+  -webkit-transform: scaleX(1.5) scaleY(1.6);
+          transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-red {
+  background-color: #e60012;
+}
+
+.btn-red:hover {
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
+          box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
+}
+
+.btn-red:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
+          box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
 }
 /*# sourceMappingURL=style.css.map */
