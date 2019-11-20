@@ -29,20 +29,7 @@ app.get("", async (req, res) => {
   }
 });
 
-app.get("/pokemon", async (req, res) => {
-  try {
-    res.render("pokemon");
-  } catch (error) {
-    res.status(500).send();
-  }
-});
-app.get("/zelda", async (req, res) => {
-  try {
-    res.render("zelda");
-  } catch (error) {
-    res.status(500).send();
-  }
-});
+
 app.get("/showcase/:id", async (req, res) => {
   const title = req.params.id;
   try {
