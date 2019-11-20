@@ -13,7 +13,8 @@ $colors: (
   primary-text-color: #212121,
   secondary-text-color: #757575,
   divider-color: #bdbdbd,
-  test: #e60012
+  test: #e60012,
+  mario-green: #44B03A
 );
 @font-face {
   font-family: "mario-font";
@@ -106,6 +107,10 @@ header {
     box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
   }
 }
+.header-nav-link:hover  .header-nav-link:not(:hover){
+  transform: scale(.9);
+  opacity: 0.3;
+} 
 
 .search {
   display: flex;

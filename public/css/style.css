@@ -115,6 +115,12 @@ header {
           box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.4);
 }
 
+.header-nav-link:hover .header-nav-link:not(:hover) {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0.3;
+}
+
 .search {
   display: -webkit-box;
   display: -ms-flexbox;
